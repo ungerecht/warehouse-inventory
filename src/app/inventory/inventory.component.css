@@ -1,0 +1,28 @@
+.title {
+  text-align: center;
+}
+
+table {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mat-row:hover {
+  background-color: aliceblue;
+}
+
+.mat-column-name {
+  font-size: large;
+  font-weight: bold;
+  width: 200px;
+}
+
+.mat-column-quantity {
+  font-weight: bold;
+  width: 100px;
+}
+
+.mat-column-delete {
+  width: 40px;
+}
