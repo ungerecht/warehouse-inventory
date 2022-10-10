@@ -1,4 +1,4 @@
-import { Item } from './Item';
+import { Item } from './item';
 
 export const inventory: Item[] = [
   { id: 1, name: 'onions', description: 'sweet', quantity: 10, unit: 'lbs' },
