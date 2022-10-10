@@ -11,6 +11,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSortModule } from '@angular/material/sort';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { InventoryComponent } from './inventory/inventory.component';
@@ -35,6 +36,7 @@ import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
     MatSortModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDialogModule,
   ],
   bootstrap: [AppComponent],
 })
