@@ -1,5 +1,17 @@
 <h1 class="title">{{ title }}</h1>
 
+<div class="tools">
+  <mat-form-field>
+    <input
+      matInput
+      #filterInput
+      type="text"
+      (keyup)="filter(filterInput.value)"
+      placeholder="Find"
+    />
+  </mat-form-field>
+</div>
+
 <table mat-table [dataSource]="inventory" matSort>
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>

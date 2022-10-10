@@ -25,6 +25,10 @@ export class InventoryComponent implements OnInit, AfterViewInit {
     this.inventory.sort = this.sort;
   }
 
+  filter(term: string): void {
+    this.inventory.filter = term.trim().toLocaleLowerCase();
+  }
+
   log(message: string): void {
     console.log(message);
   }
