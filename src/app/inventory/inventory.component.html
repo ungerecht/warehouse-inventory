@@ -51,7 +51,11 @@
         <button mat-icon-button aria-label="issue item">
           <mat-icon>remove</mat-icon>
         </button>
-        <button mat-icon-button aria-label="edit item">
+        <button
+          mat-icon-button
+          aria-label="edit item"
+          (click)="openEditDialog(item)"
+        >
           <mat-icon>edit</mat-icon>
         </button>
         <button mat-icon-button aria-label="delete item">
