@@ -15,6 +15,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { ReportsComponent } from './reports/reports.component';
+import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ReportsComponent } from './reports/reports.component';
     DashboardComponent,
     InventoryComponent,
     ReportsComponent,
+    EditDialogComponent,
   ],
   imports: [
     BrowserModule,
