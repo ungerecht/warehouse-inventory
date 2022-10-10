@@ -1,0 +1,18 @@
+* {
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  font-size: large;
+  padding: 12px;
+}
+
+.navbar {
+  padding-bottom: 12px;
+  border-bottom: 1px solid black;
+}
+
+nav {
+  gap: 6px;
+}
