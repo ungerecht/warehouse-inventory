@@ -12,6 +12,7 @@ import { MatTableModule } from '@angular/material/table';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { ReportsComponent } from './reports/reports.component';
+import { InventorySearchComponent } from './inventory-search/inventory-search.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ReportsComponent } from './reports/reports.component';
     DashboardComponent,
     InventoryComponent,
     ReportsComponent,
+    InventorySearchComponent,
   ],
   imports: [
     BrowserModule,
