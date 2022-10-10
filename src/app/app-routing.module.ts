@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { InventoryComponent } from './inventory/inventory.component';
+import { ReportsComponent } from './reports/reports.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,7 @@ const routes: Routes = [
     component: DashboardComponent,
   },
   { path: 'inventory', component: InventoryComponent },
+  { path: 'reports', component: ReportsComponent },
 ];
 
 @NgModule({
