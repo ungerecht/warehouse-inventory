@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+.tools {
+  display: flex;
+  justify-content: center;
+}
+
 table {
   width: 90%;
   margin-left: auto;
