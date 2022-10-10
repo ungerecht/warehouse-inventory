@@ -1,0 +1,23 @@
+* {
+  display: flex;
+  justify-content: center;
+}
+
+.actions {
+  flex-direction: column;
+  padding: 20px;
+}
+
+.actions-buttons {
+  gap: 6px;
+}
+
+button {
+  padding: 8px 8px 0px 8px;
+}
+
+mat-icon {
+  font-size: 40px;
+  width: 40px;
+  height: 40px;
+}
