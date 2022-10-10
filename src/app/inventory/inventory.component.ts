@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
 
 import { Item } from '../item';
 import { inventory } from '../mock-inventory';
@@ -17,7 +19,7 @@ export class InventoryComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor() {}
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {}
 
@@ -27,6 +29,10 @@ export class InventoryComponent implements OnInit, AfterViewInit {
 
   filter(term: string): void {
     this.inventory.filter = term.trim().toLocaleLowerCase();
+  }
+
+  openEditDialog(data: Item) {
+    this.dialog.open(EditDialogComponent, { data });
   }
 
   log(message: string): void {
