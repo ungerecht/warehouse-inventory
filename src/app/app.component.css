@@ -3,8 +3,13 @@
   justify-content: center;
 }
 
-.navbar {
+.title {
+  font-size: large;
   padding: 12px;
+}
+
+.navbar {
+  padding-bottom: 12px;
   border-bottom: 1px solid black;
 }
 
