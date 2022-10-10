@@ -8,11 +8,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIcon, MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSortModule } from '@angular/material/sort';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { ReportsComponent } from './reports/reports.component';
-import { InventorySearchComponent } from './inventory-search/inventory-search.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,6 @@ import { InventorySearchComponent } from './inventory-search/inventory-search.co
     DashboardComponent,
     InventoryComponent,
     ReportsComponent,
-    InventorySearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +30,9 @@ import { InventorySearchComponent } from './inventory-search/inventory-search.co
     MatButtonModule,
     MatIconModule,
     MatTableModule,
+    MatSortModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   bootstrap: [AppComponent],
 })
