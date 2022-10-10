@@ -10,7 +10,7 @@ import { inventory } from '../mock-inventory';
 })
 export class InventoryComponent implements OnInit {
   title = 'Inventory';
-  displayedColumns: string[] = ['name', 'description', 'quantity', 'delete'];
+  displayedColumns: string[] = ['name', 'description', 'quantity', 'controls'];
   inventory: Item[] = inventory;
 
   constructor() {}
