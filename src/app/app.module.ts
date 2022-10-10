@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatIcon, MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { InventoryComponent } from './inventory/inventory.component';
@@ -25,6 +26,7 @@ import { ReportsComponent } from './reports/reports.component';
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,
+    MatTableModule,
   ],
   bootstrap: [AppComponent],
 })
