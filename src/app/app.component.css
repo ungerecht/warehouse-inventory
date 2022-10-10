@@ -3,6 +3,11 @@
   justify-content: center;
 }
 
+.navbar {
+  padding: 12px;
+  border-bottom: 1px solid black;
+}
+
 nav {
-  gap: 10px;
+  gap: 6px;
 }
