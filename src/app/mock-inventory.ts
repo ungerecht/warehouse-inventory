@@ -9,14 +9,14 @@ export const inventory: Item[] = [
     name: 'jalapenos',
     description: 'spicy',
     quantity: 100,
-    unit: 'lb',
+    unit: 'lbs',
   },
   {
     id: 5,
     name: 'cheese',
     description: 'shredded',
     quantity: 6000,
-    unit: 'lb',
+    unit: 'lbs',
   },
   { id: 1, name: 'tortillas', description: 'corn', quantity: 69, unit: '' },
 ];
