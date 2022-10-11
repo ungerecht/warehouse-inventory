@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { AddDialogComponent } from '../add-dialog/add-dialog.component';
 import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
 
 import { Item } from '../item';
@@ -33,6 +34,10 @@ export class InventoryComponent implements OnInit, AfterViewInit {
 
   openEditDialog(data: Item) {
     this.dialog.open(EditDialogComponent, { data });
+  }
+
+  openAddDialog() {
+    this.dialog.open(AddDialogComponent, {});
   }
 
   log(message: string): void {
