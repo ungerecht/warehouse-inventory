@@ -46,7 +46,11 @@
     <ng-container matColumnDef="controls">
       <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let item">
-        <button mat-icon-button aria-label="recieve item">
+        <button
+          mat-icon-button
+          aria-label="recieve item"
+          (click)="openReceiveDialog(item)"
+        >
           <mat-icon>add</mat-icon>
         </button>
         <button mat-icon-button aria-label="issue item">
