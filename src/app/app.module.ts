@@ -17,6 +17,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { ReportsComponent } from './reports/reports.component';
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
+import { AddDialogComponent } from './add-dialog/add-dialog.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
     InventoryComponent,
     ReportsComponent,
     EditDialogComponent,
+    AddDialogComponent,
   ],
   imports: [
     BrowserModule,
