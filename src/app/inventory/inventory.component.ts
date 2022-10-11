@@ -7,6 +7,7 @@ import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
 
 import { Item } from '../item';
 import { inventory } from '../mock-inventory';
+import { ReceiveDialogComponent } from '../receive-dialog/receive-dialog.component';
 
 @Component({
   selector: 'app-inventory',
@@ -38,6 +39,10 @@ export class InventoryComponent implements OnInit, AfterViewInit {
 
   openAddDialog() {
     this.dialog.open(AddDialogComponent, {});
+  }
+
+  openReceiveDialog(data: Item) {
+    this.dialog.open(ReceiveDialogComponent, { data });
   }
 
   log(message: string): void {
