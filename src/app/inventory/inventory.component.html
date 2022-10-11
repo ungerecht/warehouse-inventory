@@ -53,7 +53,11 @@
         >
           <mat-icon>add</mat-icon>
         </button>
-        <button mat-icon-button aria-label="issue item">
+        <button
+          mat-icon-button
+          aria-label="send item"
+          (click)="openSendDialog(item)"
+        >
           <mat-icon>remove</mat-icon>
         </button>
         <button
