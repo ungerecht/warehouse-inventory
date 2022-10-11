@@ -10,6 +10,7 @@ import { AddDialogComponent } from '../add-dialog/add-dialog.component';
 import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
 import { ReceiveDialogComponent } from '../receive-dialog/receive-dialog.component';
 import { SendDialogComponent } from '../send-dialog/send-dialog.component';
+import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component';
 
 @Component({
   selector: 'app-inventory',
@@ -49,6 +50,10 @@ export class InventoryComponent implements OnInit, AfterViewInit {
 
   openSendDialog(data: Item) {
     this.dialog.open(SendDialogComponent, { data });
+  }
+
+  openDeleteDialog(data: Item) {
+    this.dialog.open(DeleteDialogComponent, { data });
   }
 
   log(message: string): void {
