@@ -19,6 +19,7 @@ import { ReportsComponent } from './reports/reports.component';
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
 import { ReceiveDialogComponent } from './receive-dialog/receive-dialog.component';
+import { SendDialogComponent } from './send-dialog/send-dialog.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ReceiveDialogComponent } from './receive-dialog/receive-dialog.componen
     EditDialogComponent,
     AddDialogComponent,
     ReceiveDialogComponent,
+    SendDialogComponent,
   ],
   imports: [
     BrowserModule,
