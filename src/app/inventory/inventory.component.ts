@@ -2,12 +2,14 @@ import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { AddDialogComponent } from '../add-dialog/add-dialog.component';
-import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
 
 import { Item } from '../item';
 import { inventory } from '../mock-inventory';
+
+import { AddDialogComponent } from '../add-dialog/add-dialog.component';
+import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
 import { ReceiveDialogComponent } from '../receive-dialog/receive-dialog.component';
+import { SendDialogComponent } from '../send-dialog/send-dialog.component';
 
 @Component({
   selector: 'app-inventory',
@@ -43,6 +45,10 @@ export class InventoryComponent implements OnInit, AfterViewInit {
 
   openReceiveDialog(data: Item) {
     this.dialog.open(ReceiveDialogComponent, { data });
+  }
+
+  openSendDialog(data: Item) {
+    this.dialog.open(SendDialogComponent, { data });
   }
 
   log(message: string): void {
