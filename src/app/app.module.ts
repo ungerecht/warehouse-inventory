@@ -20,6 +20,7 @@ import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
 import { ReceiveDialogComponent } from './receive-dialog/receive-dialog.component';
 import { SendDialogComponent } from './send-dialog/send-dialog.component';
+import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { SendDialogComponent } from './send-dialog/send-dialog.component';
     AddDialogComponent,
     ReceiveDialogComponent,
     SendDialogComponent,
+    DeleteDialogComponent,
   ],
   imports: [
     BrowserModule,
