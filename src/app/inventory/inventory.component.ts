@@ -4,7 +4,6 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 
 import { Item } from '../item';
-import { inventory } from '../mock-inventory';
 import { ItemService } from '../item.service';
 
 import { AddDialogComponent } from '../add-dialog/add-dialog.component';
@@ -21,7 +20,7 @@ import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component'
 export class InventoryComponent implements OnInit, AfterViewInit {
   title = 'Inventory';
   displayedColumns: string[] = ['name', 'description', 'quantity', 'controls'];
-  inventory = new MatTableDataSource<Item>(inventory);
+  inventory = new MatTableDataSource<Item>();
 
   @ViewChild(MatSort) sort!: MatSort;
 
