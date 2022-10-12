@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Item } from '../item';
 
 @Component({
@@ -8,5 +8,14 @@ import { Item } from '../item';
   styleUrls: ['./edit-dialog.component.css'],
 })
 export class EditDialogComponent {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: Item) {}
+  edited = { ...this.data };
+
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: Item,
+    private dialogRef: MatDialogRef<EditDialogComponent>
+  ) {}
+
+  save() {
+    this.dialogRef.close(this.edited);
+  }
 }
