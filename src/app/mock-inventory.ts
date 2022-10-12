@@ -18,5 +18,5 @@ export const inventory: Item[] = [
     quantity: 6000,
     unit: 'lbs',
   },
-  { id: 1, name: 'tortillas', description: 'corn', quantity: 69, unit: '' },
+  { id: 6, name: 'tortillas', description: 'corn', quantity: 69, unit: '' },
 ];
