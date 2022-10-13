@@ -16,8 +16,11 @@
       min="1"
       max="{{ this.data.quantity }}"
       [formControl]="sendQuantity"
+      required
     />
-    <mat-error *ngIf="sendQuantity.value! < 1">must be more than 0</mat-error>
+    <mat-error *ngIf="sendQuantity.value! < 1"
+      >please enter a number more than 0</mat-error
+    >
     <mat-error *ngIf="sendQuantity.value! > this.data.quantity"
       >must have sufficient quantity</mat-error
     >
