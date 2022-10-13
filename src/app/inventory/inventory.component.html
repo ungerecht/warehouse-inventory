@@ -1,1 +1,82 @@
-<p>inventory works!</p>
+<h1 class="title">{{ title }}</h1>
+
+<div class="container">
+  <div class="tools">
+    <mat-form-field class="filter-field">
+      <mat-label>Find</mat-label>
+      <input
+        matInput
+        #filterInput
+        type="text"
+        (keyup)="filter(filterInput.value)"
+      />
+    </mat-form-field>
+    <div class="tools-buttons">
+      <button
+        mat-raised-button
+        class="tools-button"
+        aria-label="aquire inventory"
+        (click)="openAddDialog()"
+      >
+        <mat-icon fontSet="material-icons-outlined">library_add</mat-icon>
+        New Item
+      </button>
+      <button mat-raised-button class="tools-button" aria-label="create folder">
+        <mat-icon fontSet="material-icons-outlined">create_new_folder</mat-icon>
+        New Group
+      </button>
+    </div>
+  </div>
+
+  <table mat-table [dataSource]="inventory" matSort>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+      <td mat-cell *matCellDef="let item">{{ item.name | titlecase }}</td>
+    </ng-container>
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Description</th>
+      <td mat-cell *matCellDef="let item">{{ item.description }}</td>
+    </ng-container>
+    <ng-container matColumnDef="quantity">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Quantity</th>
+      <td mat-cell *matCellDef="let item">
+        {{ item.quantity }} {{ item.unit }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="controls">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let item">
+        <button
+          mat-icon-button
+          aria-label="recieve item"
+          (click)="openReceiveDialog(item)"
+        >
+          <mat-icon>add</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          aria-label="send item"
+          (click)="openSendDialog(item)"
+        >
+          <mat-icon>remove</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          aria-label="edit item"
+          (click)="openEditDialog(item)"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          aria-label="delete item"
+          (click)="openDeleteDialog(item)"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>
