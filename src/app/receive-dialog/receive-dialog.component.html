@@ -2,23 +2,33 @@
 <mat-dialog-content class="dialog-form">
   <mat-form-field class="filter-field">
     <mat-label>Name</mat-label>
-    <input matInput type="text" value="{{ data.name }}" disabled />
+    <input matInput type="text" value="{{ this.data.name }}" disabled />
   </mat-form-field>
   <mat-form-field class="filter-field">
     <mat-label>Description</mat-label>
-    <input matInput type="text" value="{{ data.description }}" disabled />
+    <input matInput type="text" value="{{ this.data.description }}" disabled />
   </mat-form-field>
   <mat-form-field class="filter-field">
     <mat-label>Quantity</mat-label>
-    <input matInput type="number" min="0" [(ngModel)]="receiveQuantity" />
+    <input
+      matInput
+      type="number"
+      min="1"
+      [formControl]="receiveQuantity"
+      required
+    />
+    <mat-error *ngIf="receiveQuantity.value! < 1"
+      >please enter a number more than 0</mat-error
+    >
   </mat-form-field>
   <mat-form-field class="filter-field">
     <mat-label>Unit</mat-label>
-    <input matInput type="text" value="{{ data.unit }}" disabled />
+    <input matInput type="text" value="{{ this.data.unit }}" disabled />
   </mat-form-field>
   <mat-form-field class="filter-field">
     <mat-label>Date</mat-label>
-    <input matInput type="date" [(ngModel)]="date" />
+    <input matInput type="date" [formControl]="date" />
+    <mat-error>please select a date</mat-error>
   </mat-form-field>
 </mat-dialog-content>
 <mat-dialog-actions>

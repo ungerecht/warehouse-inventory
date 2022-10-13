@@ -1,4 +1,5 @@
 import { Component, Inject } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Item } from '../item';
 
@@ -8,11 +9,11 @@ import { Item } from '../item';
   styleUrls: ['./receive-dialog.component.css'],
 })
 export class ReceiveDialogComponent {
-  item: Item = { ...this.data };
-  receiveQuantity: number = 1;
-  date: string = new Date()
-    .toLocaleString('sv', { timeZoneName: 'short' })
-    .split(' ')[0];
+  receiveQuantity = new FormControl(1, [Validators.min(1)]);
+  date = new FormControl(
+    new Date().toLocaleString('sv', { timeZoneName: 'short' }).split(' ')[0],
+    [Validators.required]
+  );
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: Item,
@@ -20,13 +21,16 @@ export class ReceiveDialogComponent {
   ) {}
 
   receive() {
-    if (this.receiveQuantity >= 0) {
-      this.item.quantity =
-        Number(this.item.quantity) + Number(this.receiveQuantity);
-      //TODO handle date
-      this.dialogRef.close(this.item);
-    } else {
-      //error, receive quanitity must be greater than 0
+    if (this.receiveQuantity.value! > 0 && Date.parse(this.date.value!)) {
+      const data = {
+        id: this.data.id,
+        name: this.data.name,
+        description: this.data.description,
+        quantity: this.data.quantity + this.receiveQuantity.value!,
+        unit: this.data.unit,
+        date: this.date.value,
+      };
+      this.dialogRef.close(data);
     }
   }
 }
