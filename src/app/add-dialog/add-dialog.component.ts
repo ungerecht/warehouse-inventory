@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Item } from '../item';
 
@@ -8,24 +9,31 @@ import { Item } from '../item';
   styleUrls: ['./add-dialog.component.css'],
 })
 export class AddDialogComponent {
-  name: string = '';
+  name = new FormControl('', [Validators.required]);
   description: string = '';
-  quantity: number = 0;
+  quantity = new FormControl(0, [Validators.min(1)]);
   unit: string = '';
-  date: string = new Date()
-    .toLocaleString('sv', { timeZoneName: 'short' })
-    .split(' ')[0];
+  date = new FormControl(
+    new Date().toLocaleString('sv', { timeZoneName: 'short' }).split(' ')[0],
+    [Validators.required]
+  );
 
   constructor(private dialogRef: MatDialogRef<AddDialogComponent>) {}
 
   add() {
-    const data = {
-      name: this.name,
-      description: this.description,
-      quantity: this.quantity,
-      unit: this.unit,
-    };
-    //TODO handle date
-    this.dialogRef.close(data);
+    if (
+      this.name.value!.length > 0 &&
+      this.quantity.value! > 0 &&
+      Date.parse(this.date.value!)
+    ) {
+      const data = {
+        name: this.name.value,
+        description: this.description,
+        quantity: +this.quantity.value!,
+        unit: this.unit,
+        date: this.date.value,
+      };
+      this.dialogRef.close(data);
+    }
   }
 }
