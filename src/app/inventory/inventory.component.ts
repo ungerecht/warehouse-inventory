@@ -41,7 +41,7 @@ export class InventoryComponent implements OnInit, AfterViewInit {
   }
 
   add(item: Item): void {
-    item.name = item.name.trim();
+    item.name = item.name.trim().toLocaleLowerCase();
     if (!item) {
       return;
     }
@@ -51,13 +51,8 @@ export class InventoryComponent implements OnInit, AfterViewInit {
   }
 
   edit(item: Item): void {
+    item.name = item.name.trim().toLocaleLowerCase();
     this.itemService.updateItem(item).subscribe(() => {
-      this.getItems();
-    });
-  }
-
-  delete(item: Item): void {
-    this.itemService.deleteItem(item.id).subscribe(() => {
       this.getItems();
     });
   }
@@ -74,6 +69,12 @@ export class InventoryComponent implements OnInit, AfterViewInit {
       this.getItems();
     });
     //TODO record new send transaction
+  }
+
+  delete(item: Item): void {
+    this.itemService.deleteItem(item.id).subscribe(() => {
+      this.getItems();
+    });
   }
 
   filter(term: string): void {
@@ -100,7 +101,7 @@ export class InventoryComponent implements OnInit, AfterViewInit {
     const dialogRef = this.dialog.open(ReceiveDialogComponent, { data });
 
     dialogRef.afterClosed().subscribe((data) => {
-      this.receive(data);
+      if (data) this.receive(data);
     });
   }
 
@@ -108,7 +109,7 @@ export class InventoryComponent implements OnInit, AfterViewInit {
     const dialogRef = this.dialog.open(SendDialogComponent, { data });
 
     dialogRef.afterClosed().subscribe((data) => {
-      this.send(data);
+      if (data) this.send(data);
     });
   }
 
@@ -116,7 +117,7 @@ export class InventoryComponent implements OnInit, AfterViewInit {
     const dialogRef = this.dialog.open(DeleteDialogComponent, { data });
 
     dialogRef.afterClosed().subscribe((data) => {
-      this.delete(data);
+      if (data) this.delete(data);
     });
   }
 
