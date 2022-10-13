@@ -9,7 +9,7 @@ import { ReportsComponent } from './reports/reports.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/dashboard',
+    redirectTo: '/inventory',
     pathMatch: 'full',
   },
   {
